@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include<string.h>
 #include <math.h>
+
 struct Student
 {
      char ID[100];
@@ -16,11 +17,14 @@ struct Student
      double Average;
 };
 struct Student students[3000];
+
 int num=0;
+
 double Avg(struct Student stu)
 {
      return (stu.grade1+stu.grade2+stu.grade3+stu.grade4+stu.grade5)/5;
 }
+
 int Student_xunnumber(char id[])
 {
      int i;
@@ -33,6 +37,7 @@ int Student_xunnumber(char id[])
      }
      return -1;
 }
+
 int Student_xunname(char name[])
 {
      int i;
@@ -45,115 +50,119 @@ int Student_xunname(char name[])
      }
      return -1;
 }
+
 void Student_jilu(int index)
 {
-     printf("%10s%10s%10s%10s%10s   %8s   %8s   %8s   %8s   %8s   %10s\n","Ñ§ºÅ","ĞÕÃû","ĞÔ±ğ","³öÉúÄêÔÂ","°à¼¶","¸ßµÈÊıÑ§³É¼¨","´óÑ§Ó¢Óï³É¼¨","¼ÆËã»ú»ù´¡³É¼¨","¾üÊÂÀíÂÛ³É¼¨","ÌåÓı³É¼¨","Æ½¾ù³É¼¨");
+     printf("%10s%10s%10s%10s%10s   %8s   %8s   %8s   %8s   %8s   %10s\n","å­¦å·","å§“å","æ€§åˆ«","å‡ºç”Ÿå¹´æœˆ","ç­çº§","é«˜ç­‰æ•°å­¦æˆç»©","å¤§å­¦è‹±è¯­æˆç»©","è®¡ç®—æœºåŸºç¡€æˆç»©","å†›äº‹ç†è®ºæˆç»©","ä½“è‚²æˆç»©","å¹³å‡æˆç»©");
      printf("-----------------------------------------------------------------------------------------------------------------------------------------\n");
-    printf(" %10s%8s%10s    %d      %d  %8.2lf       %8.2lf       %8.2lf        %8.2lf      %8.2lf      %8.2lf\n",students[index].ID,students[index].Name,students[index].Sex,students[index].Birth,students[index].Class,
+     printf(" %10s%8s%10s    %d      %d  %8.2lf       %8.2lf       %8.2lf        %8.2lf      %8.2lf      %8.2lf\n",students[index].ID,students[index].Name,students[index].Sex,students[index].Birth,students[index].Class,
               students[index].grade1,students[index].grade2,students[index].grade3, students[index].grade4,students[index].grade5,students[index].Average);
 
 }
+
 void Student_charu()
 {
      while(1)
      {
-         printf("ÇëÊäÈëÑ§ºÅ:");
+         printf("è¯·è¾“å…¥å­¦å·:");
          scanf("%s",&students[num].ID);
          getchar();
-         printf("ÇëÊäÈëĞÕÃû:");
+         printf("è¯·è¾“å…¥å§“å:");
          scanf("%s",&students[num].Name);
          getchar();
-          printf("ÇëÊäÈëĞÔ±ğ:");
+         printf("è¯·è¾“å…¥æ€§åˆ«:");
          scanf("%s",&students[num].Sex);
          getchar();
-          printf("ÇëÊäÈë³öÉúÄêÔÂ:");
-          scanf("%d",&students[num].Birth);
-          getchar();
-          printf("ÇëÊäÈë°à¼¶:");
-        scanf("%d",&students[num].Class);
+         printf("è¯·è¾“å…¥å‡ºç”Ÿå¹´æœˆ:");
+         scanf("%d",&students[num].Birth);
          getchar();
-         printf("ÇëÊäÈë¸ßµÈÊıÑ§³É¼¨:");
+         printf("è¯·è¾“å…¥ç­çº§:");
+         scanf("%d",&students[num].Class);
+         getchar();
+         printf("è¯·è¾“å…¥é«˜ç­‰æ•°å­¦æˆç»©:");
          scanf("%lf",&students[num].grade1);
          getchar();
-         printf("ÇëÊäÈë´óÑ§Ó¢Óï³É¼¨:");
+         printf("è¯·è¾“å…¥å¤§å­¦è‹±è¯­æˆç»©:");
          scanf("%lf",&students[num].grade2);
          getchar();
-         printf("ÇëÊäÈë¼ÆËã»ú»ù´¡³É¼¨:");
+         printf("è¯·è¾“å…¥è®¡ç®—æœºåŸºç¡€æˆç»©:");
          scanf("%lf",&students[num].grade3);
          getchar();
-         printf("ÇëÊäÈë¾üÊÂÀíÂÛ³É¼¨:");
+         printf("è¯·è¾“å…¥å†›äº‹ç†è®ºæˆç»©:");
          scanf("%lf",&students[num].grade4);
          getchar();
-         printf("ÇëÊäÈëÌåÓı³É¼¨:");
+         printf("è¯·è¾“å…¥ä½“è‚²æˆç»©:");
          scanf("%lf",&students[num].grade5);
          getchar();
          students[num].Average=Avg(students[num]);
          num++;
-         printf("ÊÇ·ñ¼ÌĞø?(y/n)");
+         printf("æ˜¯å¦ç»§ç»­?(y/n)");
          if (getchar()=='n')
          {
               break;
          }
      }
 }
+
 void Student_xiugai()
 {
      while(1)
      {
          char id[20];
          int index;
-         printf("ÇëÊäÈëÒªĞŞ¸ÄµÄÑ§ÉúµÄÑ§ºÅ:");
+         printf("è¯·è¾“å…¥è¦ä¿®æ”¹çš„å­¦ç”Ÿçš„å­¦å·:");
          scanf("%s",&id);
          getchar();
          index=Student_xunnumber(id);
          if (index==-1)
          {
-              printf("Ñ§Éú²»´æÔÚ!\n");
+              printf("å­¦ç”Ÿä¸å­˜åœ¨!\n");
          }
          else
          {
-            printf("ÄãÒªĞŞ¸ÄµÄÑ§ÉúĞÅÏ¢Îª:\n");
+              printf("ä½ è¦ä¿®æ”¹çš„å­¦ç”Ÿä¿¡æ¯ä¸º:\n");
               Student_jilu(index);
-              printf("-- ÇëÊäÈëĞÂÖµ--\n");
-              printf("ÇëÊäÈëÑ§ºÅ:");
+              printf("-- è¯·è¾“å…¥æ–°å€¼--\n");
+              printf("è¯·è¾“å…¥å­¦å·:");
               scanf("%s",&students[index].ID);
               getchar();
-              printf("ÇëÊäÈëĞÕÃû:");
+              printf("è¯·è¾“å…¥å§“å:");
               scanf("%s",&students[index].Name);
               getchar();
-                printf("ÇëÊäÈëĞÔ±ğ:");
+              printf("è¯·è¾“å…¥æ€§åˆ«:");
               scanf("%s",&students[index].Sex);
               getchar();
-               printf("ÇëÊäÈë³öÉúÄêÔÂ:");
+              printf("è¯·è¾“å…¥å‡ºç”Ÿå¹´æœˆ:");
               scanf("%d",&students[index].Birth);
               getchar();
-               printf("ÇëÊäÈë°à¼¶:");
+              printf("è¯·è¾“å…¥ç­çº§:");
               scanf("%d",&students[index].Class);
               getchar();
-  printf("ÇëÊäÈë¸ßµÈÊıÑ§³É¼¨:");
-         scanf("%lf",&students[num].grade1);
-         getchar();
-         printf("ÇëÊäÈë´óÑ§Ó¢Óï³É¼¨:");
-         scanf("%lf",&students[num].grade2);
-         getchar();
-         printf("ÇëÊäÈë¼ÆËã»ú»ù´¡³É¼¨:");
-         scanf("%lf",&students[num].grade3);
-         getchar();
-         printf("ÇëÊäÈë¾üÊÂÀíÂÛ³É¼¨:");
-         scanf("%lf",&students[num].grade4);
-         getchar();
-         printf("ÇëÊäÈëÌåÓı³É¼¨:");
-         scanf("%lf",&students[num].grade5);
-         getchar();
+              printf("è¯·è¾“å…¥é«˜ç­‰æ•°å­¦æˆç»©:");
+              scanf("%lf",&students[num].grade1);
+              getchar();
+              printf("è¯·è¾“å…¥å¤§å­¦è‹±è¯­æˆç»©:");
+              scanf("%lf",&students[num].grade2);
+              getchar();
+              printf("è¯·è¾“å…¥è®¡ç®—æœºåŸºç¡€æˆç»©:");
+              scanf("%lf",&students[num].grade3);
+              getchar();
+              printf("è¯·è¾“å…¥å†›äº‹ç†è®ºæˆç»©:");
+              scanf("%lf",&students[num].grade4);
+              getchar();
+              printf("è¯·è¾“å…¥ä½“è‚²æˆç»©:");
+              scanf("%lf",&students[num].grade5);
+              getchar();
               students[index].Average=Avg(students[index]);
          }
-         printf("ÊÇ·ñ¼ÌĞø?(y/n)");
+         printf("æ˜¯å¦ç»§ç»­?(y/n)");
          if (getchar()=='n')
          {
               break;
          }
      }
 }
+
 void Student_shanchu()
 {
     int i;
@@ -161,19 +170,19 @@ void Student_shanchu()
      {
          char id[20];
          int index;
-         printf("ÇëÊäÈëÒªÉ¾³ıµÄÑ§ÉúµÄÑ§ºÅ:");
+         printf("è¯·è¾“å…¥è¦åˆ é™¤çš„å­¦ç”Ÿçš„å­¦å·:");
          scanf("%s",&id);
          getchar();
          index=Student_xunnumber(id);
          if (index==-1)
          {
-              printf("Ñ§Éú²»´æÔÚ!\n");
+              printf("å­¦ç”Ÿä¸å­˜åœ¨!\n");
          }
          else
          {
-              printf("ÄãÒªÉ¾³ıµÄÑ§ÉúĞÅÏ¢Îª:\n");
+              printf("ä½ è¦åˆ é™¤çš„å­¦ç”Ÿä¿¡æ¯ä¸º:\n");
               Student_jilu(index);
-              printf("ÊÇ·ñÕæµÄÒªÉ¾³ı?(y/n)");
+              printf("æ˜¯å¦çœŸçš„è¦åˆ é™¤?(y/n)");
               if (getchar()=='y')
               {
                    for (i=index;i<num-1;i++)
@@ -184,78 +193,82 @@ void Student_shanchu()
               }
               getchar();
          }
-         printf("ÊÇ·ñ¼ÌĞø?(y/n)");
+         printf("æ˜¯å¦ç»§ç»­?(y/n)");
          if (getchar()=='n')
          {
             break;
          }
      }
 }
+
 void Student_byname()
 {
 while(1)
      {
          char name[20];
          int index;
-         printf("ÇëÊäÈëÒª²éÑ¯µÄÑ§ÉúµÄĞÕÃû:");
+         printf("è¯·è¾“å…¥è¦æŸ¥è¯¢çš„å­¦ç”Ÿçš„å§“å:");
          scanf("%s",&name);
          getchar();
          index=Student_xunname(name);
          if (index==-1)
          {
-              printf("Ñ§Éú²»´æÔÚ!\n");
+              printf("å­¦ç”Ÿä¸å­˜åœ¨!\n");
          }
          else
          {
-              printf("ÄãÒª²éÑ¯µÄÑ§ÉúĞÅÏ¢Îª:\n");
+              printf("ä½ è¦æŸ¥è¯¢çš„å­¦ç”Ÿä¿¡æ¯ä¸º:\n");
               Student_jilu(index);
          }
-         printf("ÊÇ·ñ¼ÌĞø?(y/n)");
+         printf("æ˜¯å¦ç»§ç»­?(y/n)");
          if (getchar()=='n')
          {
             break;
          }
      }
 }
+
 void Student_bynumber()
 {
     while(1)
-     {
+    {
          char id[20];
          int index;
-         printf("ÇëÊäÈëÒª²éÑ¯µÄÑ§ÉúµÄÑ§ºÅ:");
+         printf("è¯·è¾“å…¥è¦æŸ¥è¯¢çš„å­¦ç”Ÿçš„å­¦å·:");
          scanf("%s",id);
          getchar();
          index=Student_xunnumber(id);
          if (index==-1)
          {
-            printf("Ñ§Éú²»´æÔÚ!\n");
+            printf("å­¦ç”Ÿä¸å­˜åœ¨!\n");
          }
          else
          {
-              printf("ÄãÒª²éÑ¯µÄÑ§ÉúĞÅÏ¢Îª:\n");
+              printf("ä½ è¦æŸ¥è¯¢çš„å­¦ç”Ÿä¿¡æ¯ä¸º:\n");
               Student_jilu(index);
          }
-         printf("ÊÇ·ñ¼ÌĞø?(y/n)");
+         printf("æ˜¯å¦ç»§ç»­?(y/n)");
          if (getchar()=='n')
          {
             break;
-}
          }
-     }
+    }
+}
+
 void Student_Display()
 {
-     printf("%5s%10s%10s%10s%10s%10s   %8s   %8s   %8s   %8s   %8s   %10s\n","ÅÅÃû","Ñ§ºÅ","ĞÕÃû","ĞÔ±ğ","³öÉúÄêÔÂ","°à¼¶","¸ßµÈÊıÑ§³É¼¨","´óÑ§Ó¢Óï³É¼¨","¼ÆËã»ú»ù´¡³É¼¨","¾üÊÂÀíÂÛ³É¼¨","ÌåÓı³É¼¨","Æ½¾ù³É¼¨");
+     printf("%5s%10s%10s%10s%10s%10s   %8s   %8s   %8s   %8s   %8s   %10s\n","æ’å","å­¦å·","å§“å","æ€§åˆ«","å‡ºç”Ÿå¹´æœˆ","ç­çº§","é«˜ç­‰æ•°å­¦æˆç»©","å¤§å­¦è‹±è¯­æˆç»©","è®¡ç®—æœºåŸºç¡€æˆç»©","å†›äº‹ç†è®ºæˆç»©","ä½“è‚²æˆç»©","å¹³å‡æˆç»©");
      printf("---------------------------------------------------------------------------------------------------------------------------------------------\n");
 }
+
 void read()
 {
      FILE *fp;
      int i;
      if ((fp=fopen("xinxi.txt","rb"))==NULL)
      {
-                  printf("²»ÄÜ´ò¿ªÎÄ¼ş!\n");
-return;
+              printf("ä¸èƒ½æ‰“å¼€æ–‡ä»¶!\n");
+              return;
      }
      if (fread(&num,sizeof(int),1,fp)!=1)
      {
@@ -270,45 +283,47 @@ return;
      }
      fclose(fp);
 }
+
 void write()
 {
      FILE *fp;
      int i;
      if ((fp=fopen("xinxi.txt","wb"))==NULL)
      {
-         printf("²»ÄÜ´ò¿ªÎÄ¼ş!\n");
+         printf("ä¸èƒ½æ‰“å¼€æ–‡ä»¶!\n");
          return;
      }
      if (fwrite(&num,sizeof(int),1,fp)!=1)
      {
-         printf("Ğ´ÈëÎÄ¼ş´íÎó!\n");
+         printf("å†™å…¥æ–‡ä»¶é”™è¯¯!\n");
      }
      for (i=0;i<num;i++)
      {
-if (fwrite(&students[i],sizeof(struct Student),1,fp)!=1)
+         if (fwrite(&students[i],sizeof(struct Student),1,fp)!=1)
          {
-              printf("Ğ´ÈëÎÄ¼ş´íÎó!\n");
+              printf("å†™å…¥æ–‡ä»¶é”™è¯¯!\n");
          }
      }
      fclose(fp);
 }
+
 void main()
 {
      int x;
      read();
      while(1)
      {
-         printf("\nÑ§Éú³É¼¨¹ÜÀíÏµÍ³\n");
-         printf("1. Ôö¼ÓÑ§Éú¼ÇÂ¼\n");
-         printf("2. ĞŞ¸ÄÑ§Éú¼ÇÂ¼\n");
-         printf("3. É¾³ıÑ§Éú¼ÇÂ¼\n");
-         printf("4. °´ĞÕÃû²éÑ¯Ñ§Éú¼ÇÂ¼\n");
-         printf("5. °´Ñ§ºÅ²éÑ¯Ñ§Éú¼ÇÂ¼\n");
-         printf("6. ³É¼¨Í³¼Æ\n");
-         printf("7. ÍË³ö\n");
-         printf("ÇëÑ¡Ôñ(1µ½7):");
+         printf("\nå­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ\n");
+         printf("1. å¢åŠ å­¦ç”Ÿè®°å½•\n");
+         printf("2. ä¿®æ”¹å­¦ç”Ÿè®°å½•\n");
+         printf("3. åˆ é™¤å­¦ç”Ÿè®°å½•\n");
+         printf("4. æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿè®°å½•\n");
+         printf("5. æŒ‰å­¦å·æŸ¥è¯¢å­¦ç”Ÿè®°å½•\n");
+         printf("6. æˆç»©ç»Ÿè®¡\n");
+         printf("7. é€€å‡º\n");
+         printf("è¯·é€‰æ‹©(1åˆ°7):");
          scanf("%d",&x);
-        getchar();
+         getchar();
          switch(x)
          {
          case 1:
@@ -323,29 +338,30 @@ void main()
          case 4:
               Student_byname();
               break;
+         case 5:
+              Student_bynumber();
+              break;
          case 6:
               tongji();
               break;
          case 7:
               exit(0);
               break;
-         case 5:
-            Student_bynumber();
-            break;
          }
          write();
      }
 }
+
 void tongji()
 {
     int n;
-    printf("1£ºÆ½¾ù³É¼¨ÅÅÃû¡£\n");
-    printf("2£ºÍ³¼Æ¸÷·ÖÊı¶ÎÈËÊı¡£\n");
-    printf("3£ºÍ³¼Æ²»¼°¸ñÑ§Éú¡£\n");
-    printf("4£ºÍ³¼Æ°à¼¶Æ½¾ù·Ö¡£\n");
-    printf("5£º°´ĞÔ±ğÍ³¼ÆÆ½¾ù³É¼¨¡£\n");
-    printf("0£º·µ»Ø\n");
-    printf("ÇëÊäÈë£¨0-5£©£º");
+    printf("1ï¼šå¹³å‡æˆç»©æ’åã€‚\n");
+    printf("2ï¼šç»Ÿè®¡å„åˆ†æ•°æ®µäººæ•°ã€‚\n");
+    printf("3ï¼šç»Ÿè®¡ä¸åŠæ ¼å­¦ç”Ÿã€‚\n");
+    printf("4ï¼šç»Ÿè®¡ç­çº§å¹³å‡åˆ†ã€‚\n");
+    printf("5ï¼šæŒ‰æ€§åˆ«ç»Ÿè®¡å¹³å‡æˆç»©ã€‚\n");
+    printf("0ï¼šè¿”å›\n");
+    printf("è¯·è¾“å…¥ï¼ˆ0-5ï¼‰ï¼š");
     scanf("%d",&n);
     switch(n)
          {
@@ -369,6 +385,7 @@ void tongji()
               break;
          }
 }
+
 void tongji1()
 {
     int i,j;
@@ -395,12 +412,13 @@ void tongji1()
               students[i].grade1,students[i].grade2,students[i].grade3,students[i].grade4,students[i].grade5,students[i].Average);
        }
        else{
-        printf("%3d   %10s %8s %8s   %d       %d      %.2lf         %.2lf           %.2lf           %.2lf         %.2lf        %.2lf\n",i+1,students[i].ID,students[i].Name,students[i].Sex,students[i].Birth,students[i].Class,
+           printf("%3d   %10s %8s %8s   %d       %d      %.2lf         %.2lf           %.2lf           %.2lf         %.2lf        %.2lf\n",i+1,students[i].ID,students[i].Name,students[i].Sex,students[i].Birth,students[i].Class,
               students[i].grade1,students[i].grade2,students[i].grade3,students[i].grade4,students[i].grade5,students[i].Average);
        }
     }
         tongji();
 }
+
 void tongji2()
 {
     int a=0,b=0,c=0,d=0,e=0,i;
@@ -428,14 +446,14 @@ void tongji2()
             e++;
         }
     }
-    printf("60ÒÔÏÂ£º%dÈË¡£\n",a);
-    printf("60-70£º%dÈË¡£\n",b);
-    printf("70-80£º%dÈË¡£\n",c);
-    printf("80-90£º%dÈË¡£\n",d);
-    printf("90ÒÔÉÏ£º%dÈË¡£\n",e);
+    printf("60ä»¥ä¸‹ï¼š%däººã€‚\n",a);
+    printf("60-70ï¼š%däººã€‚\n",b);
+    printf("70-80ï¼š%däººã€‚\n",c);
+    printf("80-90ï¼š%däººã€‚\n",d);
+    printf("90ä»¥ä¸Šï¼š%däººã€‚\n",e);
     tongji();
-
 }
+
 void tongji3()
 {
     int a=0,b=0,c=0,d=0,e=0,n=0,i;
@@ -445,7 +463,7 @@ void tongji3()
         int t=0;
         if(students[i].grade1<60)
         {
-            printf("%s ¸ßµÈÊıÑ§ %.2lf ",students[i].ID,students[i].grade1);
+            printf("%s é«˜ç­‰æ•°å­¦ %.2lf ",students[i].ID,students[i].grade1);
             t=1;
             a++;
         }
@@ -453,12 +471,12 @@ void tongji3()
         {
             if(t==0)
             {
-                printf("%s ´óÑ§Ó¢Óï %.2lf ",students[i].ID,students[i].grade2);
+                printf("%s å¤§å­¦è‹±è¯­ %.2lf ",students[i].ID,students[i].grade2);
                 t=1;
             }
             if(t==1)
             {
-                printf("´óÑ§Ó¢Óï %.2lf ",students[i].grade2);
+                printf("å¤§å­¦è‹±è¯­ %.2lf ",students[i].grade2);
             }
             b++;
         }
@@ -466,12 +484,12 @@ void tongji3()
         {
             if(t==0)
             {
-                printf("%s ¼ÆËã»ú»ù´¡ %.2lf ",students[i].ID,students[i].grade3);
+                printf("%s è®¡ç®—æœºåŸºç¡€ %.2lf ",students[i].ID,students[i].grade3);
                 t=1;
             }
             if(t==1)
             {
-                printf("¼ÆËã»ú»ù´¡ %.2lf ",students[i].grade3);
+                printf("è®¡ç®—æœºåŸºç¡€ %.2lf ",students[i].grade3);
             }
             c++;
         }
@@ -479,12 +497,12 @@ void tongji3()
         {
             if(t==0)
             {
-                printf("%s ¾üÊÂÀíÂÛ %.2lf ",students[i].ID,students[i].grade4);
+                printf("%s å†›äº‹ç†è®º %.2lf ",students[i].ID,students[i].grade4);
                 t=1;
             }
             if(t==1)
             {
-                printf("¾üÊÂÀíÂÛ %.2lf ",students[i].grade4);
+                printf("å†›äº‹ç†è®º %.2lf ",students[i].grade4);
             }
             d++;
         }
@@ -492,12 +510,12 @@ void tongji3()
         {
             if(t==0)
             {
-                printf("%s ÌåÓı %.2lf ",students[i].ID,students[i].grade5);
+                printf("%s ä½“è‚² %.2lf ",students[i].ID,students[i].grade5);
                 t=1;
             }
             if(t==1)
             {
-                printf("ÌåÓı %.2lf ",students[i].grade5);
+                printf("ä½“è‚² %.2lf ",students[i].grade5);
             }
             e++;
         }
@@ -508,25 +526,26 @@ void tongji3()
         }
 
     }
-    printf("¸ßµÈÊıÑ§²»¼°¸ñÈËÊı£º%d\n",a);
-    printf("´óÑ§Ó¢Óï²»¼°¸ñÈËÊı£º%d\n",b);
-    printf("¼ÆËã»ú»ù´¡²»¼°¸ñÈËÊı£º%d\n",c);
-    printf("¾üÊÂÀíÂÛ²»¼°¸ñÈËÊı£º%d\n",d);
-    printf("ÌåÓı²»¼°¸ñÈËÊı£º%d\n",e);
-    printf("²»¼°¸ñÑ§ÉúÈËÊı£º%d\n",n);
+    printf("é«˜ç­‰æ•°å­¦ä¸åŠæ ¼äººæ•°ï¼š%d\n",a);
+    printf("å¤§å­¦è‹±è¯­ä¸åŠæ ¼äººæ•°ï¼š%d\n",b);
+    printf("è®¡ç®—æœºåŸºç¡€ä¸åŠæ ¼äººæ•°ï¼š%d\n",c);
+    printf("å†›äº‹ç†è®ºä¸åŠæ ¼äººæ•°ï¼š%d\n",d);
+    printf("ä½“è‚²ä¸åŠæ ¼äººæ•°ï¼š%d\n",e);
+    printf("ä¸åŠæ ¼å­¦ç”Ÿäººæ•°ï¼š%d\n",n);
     tongji();
 }
+
 void tongji4()
 {
     int a;
-    printf("ÇëÑ¡Ôñ¿ÆÄ¿£º\n");
-    printf("1£º¸ßµÈÊıÑ§\n");
-    printf("2£º´óÑ§Ó¢Óï\n");
-    printf("3£º¼ÆËã»ú»ù´¡\n");
-    printf("4£º¾üÊÂÀíÂÛ\n");
-    printf("5£ºÌåÓı\n");
-    printf("6£ºÆ½¾ù·Ö\n");
-    printf("ÇëÊäÈë£º");
+    printf("è¯·é€‰æ‹©ç§‘ç›®ï¼š\n");
+    printf("1ï¼šé«˜ç­‰æ•°å­¦\n");
+    printf("2ï¼šå¤§å­¦è‹±è¯­\n");
+    printf("3ï¼šè®¡ç®—æœºåŸºç¡€\n");
+    printf("4ï¼šå†›äº‹ç†è®º\n");
+    printf("5ï¼šä½“è‚²\n");
+    printf("6ï¼šå¹³å‡åˆ†\n");
+    printf("è¯·è¾“å…¥ï¼š");
     scanf("%d",&a);
     switch(a)
     {
@@ -550,20 +569,22 @@ void tongji4()
               break;
     }
 }
+
 void BubbleSort(struct Student cl[],int n)
 {
     struct Student k;
 	int i;
-		for(i=0;i<n;i++)
+        for(i=0;i<n;i++)
+	{
+		if(cl[i].Average<cl[i+1].Average)
 		{
-			if(cl[i].Average<cl[i+1].Average)
-			{
-				k=cl[i];
-				cl[i]=cl[i+1];
-				cl[i+1]=k;
-			}
+			k=cl[i];
+			cl[i]=cl[i+1];
+			cl[i+1]=k;
 		}
+	}
 }
+
 void tongji4a()
 {
     struct Student cl[1000];
@@ -608,6 +629,7 @@ void tongji4a()
         printf("%d    %.2lf\n",cl[i].Class,cl[i].Average);
     }
 }
+
 void tongji4b()
 {
     struct Student cl[1000];
@@ -652,6 +674,7 @@ void tongji4b()
         printf("%d    %.2lf\n",cl[i].Class,cl[i].Average);
     }
 }
+
 void tongji4c()
 {
     struct Student cl[1000];
@@ -696,6 +719,7 @@ void tongji4c()
         printf("%d    %.2lf\n",cl[i].Class,cl[i].Average);
     }
 }
+
 void tongji4d()
 {
     struct Student cl[1000];
@@ -740,6 +764,7 @@ void tongji4d()
         printf("%d    %.2lf\n",cl[i].Class,cl[i].Average);
     }
 }
+
 void tongji4e()
 {
     struct Student cl[1000];
@@ -784,6 +809,7 @@ void tongji4e()
         printf("%d    %.2lf\n",cl[i].Class,cl[i].Average);
     }
 }
+
 void tongji4f()
 {
     struct Student cl[1000];
@@ -828,6 +854,7 @@ void tongji4f()
         printf("%d    %.2lf\n",cl[i].Class,cl[i].Average);
     }
 }
+
 void tongji5()
 {
     int k=0;
@@ -841,49 +868,49 @@ void tongji5()
            suma4=suma4+students[k].grade4;
            suma5=suma5+students[k].grade5;
            a++;
-         }
-         else{
+       }
+       else{
            sumb1=sumb1+students[k].grade1;
            sumb2=sumb2+students[k].grade2;
            sumb3=sumb3+students[k].grade3;
            sumb4=sumb4+students[k].grade4;
            sumb5=sumb5+students[k].grade5;
            b++;
-         }
+       }
      }
      if(a==0)
      {
-     suma1=0;
-     suma2=0;
-     suma3=0;
-     suma4=0;
-     suma5=0;
+       suma1=0;
+       suma2=0;
+       suma3=0;
+       suma4=0;
+       suma5=0;
      }
      else{
-     suma1=suma1/a;
-     suma2=suma2/a;
-     suma3=suma3/a;
-     suma4=suma4/a;
-     suma5=suma5/a;
+       suma1=suma1/a;
+       suma2=suma2/a;
+       suma3=suma3/a;
+       suma4=suma4/a;
+       suma5=suma5/a;
      }
      if(b==0){
-     sumb1=0;
-     sumb2=0;
-     sumb3=0;
-     sumb4=0;
-     sumb5=0;
+       sumb1=0;
+       sumb2=0;
+       sumb3=0;
+       sumb4=0;
+       sumb5=0;
      }
      else{
-     sumb1=sumb1/b;
-     sumb2=sumb2/b;
-     sumb3=sumb3/b;
-     sumb4=sumb4/b;
-     sumb5=sumb5/b;
+       sumb1=sumb1/b;
+       sumb2=sumb2/b;
+       sumb3=sumb3/b;
+       sumb4=sumb4/b;
+       sumb5=sumb5/b;
      }
-     printf("¸ßµÈÊıÑ§Æ½¾ù·Ö£ºÄĞÉú£º%.2lf Å®Éú£º%.2lf\n",suma1,sumb1);
-     printf("´óÑ§Ó¢ÓïÆ½¾ù·Ö£ºÄĞÉú£º%.2lf Å®Éú£º%.2lf\n",suma2,sumb2);
-     printf("¼ÆËã»ú»ù´¡Æ½¾ù·Ö£ºÄĞÉú£º%.2lf Å®Éú£º%.2lf\n",suma3,sumb3);
-     printf("¾üÊÂÀíÂÛÆ½¾ù·Ö£ºÄĞÉú£º%.2lf Å®Éú£º%.2lf\n",suma4,sumb4);
-     printf("ÌåÓıÆ½¾ù·Ö£ºÄĞÉú£º%.2lf Å®Éú£º%.2lf\n",suma5,sumb5);
+     printf("é«˜ç­‰æ•°å­¦å¹³å‡åˆ†ï¼šç”·ç”Ÿï¼š%.2lf å¥³ç”Ÿï¼š%.2lf\n",suma1,sumb1);
+     printf("å¤§å­¦è‹±è¯­å¹³å‡åˆ†ï¼šç”·ç”Ÿï¼š%.2lf å¥³ç”Ÿï¼š%.2lf\n",suma2,sumb2);
+     printf("è®¡ç®—æœºåŸºç¡€å¹³å‡åˆ†ï¼šç”·ç”Ÿï¼š%.2lf å¥³ç”Ÿï¼š%.2lf\n",suma3,sumb3);
+     printf("å†›äº‹ç†è®ºå¹³å‡åˆ†ï¼šç”·ç”Ÿï¼š%.2lf å¥³ç”Ÿï¼š%.2lf\n",suma4,sumb4);
+     printf("ä½“è‚²å¹³å‡åˆ†ï¼šç”·ç”Ÿï¼š%.2lf å¥³ç”Ÿï¼š%.2lf\n",suma5,sumb5);
      tongji();
 }
